@@ -23,24 +23,27 @@ class Students {
 
 public class SortingOfObjects {
     public static void main(String[] args) {
-        List<Students> nums = new ArrayList<>();
+        ArrayList<Students> details = new ArrayList<Students>();
 
-        nums.add(new Students(42, "Rahul"));
-        nums.add(new Students(26, "Vishaka"));
-        nums.add(new Students(26, "Sneha"));
-        nums.add(new Students(5, "Vivaan"));
+        details.add(new Students(42, "Rahul"));
+        details.add(new Students(26, "Vishaka"));
+        details.add(new Students(36, "Sneha"));
+        details.add(new Students(5, "Vivaan"));
 
         Comparator<Students> com = (i, j) -> {
-            if (i.age > j.age) {
-                return 1;
-            } else {
-                return -1;
-            }
+            // if (i.age > j.age) {
+            // return 1;
+            // } else {
+            // return -1;
+            // }
+
+            return (i.age > j.age) ? 1 : -1;
         };
 
-        Collections.sort(nums, com);
+        Collections.sort(details, com);
+        // Collections.sort(details);
 
-        System.out.println(nums);
+        System.out.println(details);
 
     }
 }
